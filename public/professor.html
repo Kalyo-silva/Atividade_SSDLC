@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Professor - Gerenciador de Reservas</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Painel do Professor</h1>
+        <nav>
+            <button id="nav-classrooms">Salas de Aula</button>
+            <button id="nav-reservations">Minhas Reservas</button>
+            <button id="logout-btn">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="classrooms-section" class="section">
+            <h2>Salas Disponíveis</h2>
+            <div id="classrooms-grid"></div>
+        </div>
+
+        <div id="reservations-section" class="section hidden">
+            <h2>Minhas Reservas</h2>
+            <ul id="reservations-list"></ul>
+        </div>
+    </main>
+
+    <!-- Modal para Reserva/Edição -->
+    <div id="reserve-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Reservar Sala</h2>
+            <h3 id="modal-class-name"></h3>
+            <p id="modal-class-desc"></p>
+            <input type="hidden" id="reserve-id">
+            <input type="date" id="reserve-date">
+            <button id="confirm-reserve">Confirmar</button>
+            <p id="reserve-error" class="error"></p>
+        </div>
+    </div>
+
+    <script src="/js/professor.js"></script>
+</body>
+</html>

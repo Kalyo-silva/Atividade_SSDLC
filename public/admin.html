@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Admin - Gerenciador de Reservas</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Painel do Administrador</h1>
+        <nav>
+            <button id="nav-users">Cadastro de Usuários</button>
+            <button id="nav-classrooms">Cadastro de Salas</button>
+            <button id="logout-btn">Logout</button>
+        </nav>
+    </header>
+
+    <main>
+        <div id="dashboard" class="section">
+            <h2>Dashboard</h2>
+            <div class="indicators-container">
+                <div class="indicator-card">
+                    <div class="indicator-value" id="dash-classrooms">0</div>
+                    <div class="indicator-label">Salas cadastradas</div>
+                </div>
+                <div class="indicator-card">
+                    <div class="indicator-value" id="dash-reservations">0</div>
+                    <div class="indicator-label">Total de reservas</div>
+                </div>
+                <div class="indicator-card">
+                    <div class="indicator-value" id="dash-today">0</div>
+                    <div class="indicator-label">Reservas hoje</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="users-section" class="section hidden">
+            <h2>Usuários</h2>
+            <div class="card-panel">
+                <form id="user-form">
+                    <input type="hidden" id="user-id">
+                    <input type="text" id="user-name" placeholder="Nome de usuário" required>
+                    <input type="password" id="user-pass" placeholder="Senha (deixe em branco se for edição e não quiser alterar)">
+                    <select id="user-type">
+                        <option value="1">Administrador</option>
+                        <option value="2">Professor</option>
+                    </select>
+                    <div class="actions">
+                        <button type="submit" id="user-submit-btn">Salvar Usuário</button>
+                        <button type="button" id="user-cancel-btn" class="hidden edit-btn">Cancelar Edição</button>
+                    </div>
+                </form>
+            </div>
+            <ul id="users-list"></ul>
+        </div>
+
+        <div id="classrooms-section" class="section hidden">
+            <h2>Salas de Aula</h2>
+            <div class="card-panel">
+                <form id="classroom-form" enctype="multipart/form-data">
+                    <input type="hidden" id="class-id">
+                    <input type="text" id="class-name" placeholder="Nome da Sala" required>
+                    <input type="text" id="class-location" placeholder="Localização" required>
+                    <select id="class-type">
+                        <option value="Sala de Aula">Sala de Aula</option>
+                        <option value="Laboratório">Laboratório</option>
+                    </select>
+                    <input type="file" id="class-image" accept="image/*">
+                    <div class="actions">
+                        <button type="submit" id="class-submit-btn">Salvar Sala</button>
+                        <button type="button" id="class-cancel-btn" class="hidden edit-btn">Cancelar Edição</button>
+                    </div>
+                </form>
+            </div>
+            <ul id="classrooms-list"></ul>
+        </div>
+    </main>
+
+    <script src="/js/admin.js"></script>
+</body>
+</html>

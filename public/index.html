@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Gerenciador de Reservas</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="login-container" id="login-section">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Usuário" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="login-error" class="error"></p>
+    </div>
+
+    <div class="login-container hidden" id="change-password-section">
+        <h2>Mudar Senha (Obrigatório)</h2>
+        <form id="change-password-form">
+            <input type="password" id="new-password" placeholder="Nova Senha" required>
+            <button type="submit">Atualizar</button>
+        </form>
+        <p id="cp-error" class="error"></p>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
